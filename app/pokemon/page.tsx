@@ -1,6 +1,6 @@
 
-import Link from "next/link"
 
+import PokemonList from './PokemonList'
 export default async function pokemon() {
 
     interface Pokemon {
@@ -13,18 +13,13 @@ export default async function pokemon() {
     const json = await response.json()
     console.log(json)
     const pokemon = json.results
+
     return (
-        <ul className="grid grid-cols-4 gap-4">
-            {pokemon.map((post: Pokemon) => (
-                <li
-                    className="p-4 border border-gray-200 hover:bg-gray-900 capitalize mx-auto w-50"
-                    key={post.url}>
-                    <Link
-                        href={`/pokemon/${post.name}`}>
-                        {post.name}
-                    </Link>
-                </li>
-            ))}
-        </ul>
+
+        <div>
+            <PokemonList pokemons={pokemon} />
+
+
+        </div>
     )
 }

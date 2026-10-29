@@ -1,7 +1,7 @@
 
 
 export async function GET() {
-    const res = await fetch('https://pokeapi.co/api/v2/pokemon?limit=20', {
+    const res = await fetch('https://pokeapi.co/api/v2/pokemon?limit=100', {
 
         headers: {
             'Content-Type': 'application/json',
